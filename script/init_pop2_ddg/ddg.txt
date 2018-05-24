@@ -1,0 +1,79 @@
+Architecture="x86_64"
+OperatingSystem="windows"
+Language="R"
+LanguageVersion="R version 3.4.0 (2017-04-21)"
+RDataTrackerVersion="2.26.0"
+Script="D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script/init_pop2.R"
+SourcedScripts=""
+ProcessFileTimestamp="2018-05-17T13.58.35-03"
+WorkingDirectory="D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script"
+DDGDirectory="D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script/init_pop2_ddg"
+DateTime="2018-05-17T14.10.35-03"
+InstalledPackages=""
+15
+Start p1 "1-init_pop2.R" Value="init_pop2.R" Time="227.73" Script="NA" Pos="NA";
+Operation p2 "2-n_obj <- nrow(dat)" Value="n_obj <- nrow(dat)" Time="227.73" Script="0" Pos="4,1,4,18";
+CF p1 p2
+Snapshot d1 "1-dat [ENV]" Value="data/1-dat.csv" Time="2018-05-17T14.10.35-03";
+DF d1 p2
+Data d2 "2-n_obj" Value="200";
+DF p2 d2
+Operation p3 "3-cl <- makeCluster(ncores)" Value="cl <- makeCluster(ncores)" Time="227.81" Script="0" Pos="6,1,6,25";
+CF p2 p3
+Data d3 "3-ncores [ENV]" Value="8";
+DF d3 p3
+Snapshot d4 "4-cl" Value="data/4-cl-PARTIAL.txt" Time="2018-05-17T14.10.37-03";
+DF p3 d4
+Operation p4 "4-clusterExport(cl, list(\"init_population\", \"dat\", \"n_obj\", \"p" Value="clusterExport(cl, list(\"init_population\", \"dat\", \"n_obj\", \"p" Time="227.82" Script="0" Pos="7,1,7,85";
+CF p3 p4
+DF d4 p4
+Start p5 "5-for (data_file in calib_files) {    dat <- readRDS(file.path" Value="for (data_file in calib_files) {    dat <- readRDS(file.path" Time="227.84" Script="0" Pos="9,1,24,1";
+CF p4 p5
+Data d5 "5-calib_files [ENV]" Value="\"DS1-200DATA.rds\"";
+DF d5 p5
+Data d6 "6-data_path [ENV]" Value="\"~/!filesync/instancias/sdc\"";
+DF d6 p5
+DF d1 p5
+Snapshot d7 "7-aggr_levels [ENV]" Value="data/7-aggr_levels.csv" Time="2018-05-17T14.10.37-03";
+DF d7 p5
+Snapshot d8 "8-pop [ENV]" Value="data/8-pop-PARTIAL.txt" Time="2018-05-17T14.10.37-03";
+DF d8 p5
+Data d9 "9-main_path [ENV]" Value="\"~/!filesync/mestrado/18.1_e-science/trabalho\"";
+DF d9 p5
+Start p6 "6-for loop" Value="for loop" Time="227.89" Script="NA" Pos="NA";
+CF p5 p6
+Operation p7 "7-data_file <- DS1-200DATA.rds" Value="data_file <- DS1-200DATA.rds" Time="227.89" Script="NA" Pos="NA";
+CF p6 p7
+Data d10 "10-data_file" Value="\"DS1-200DATA.rds\"";
+DF p7 d10
+Operation p8 "8-dat <- readRDS(file.path(data_path, data_file))" Value="dat <- readRDS(file.path(data_path, data_file))" Time="227.89" Script="0" Pos="11,3,11,49";
+CF p7 p8
+DF d6 p8
+DF d10 p8
+Snapshot d11 "11-dat" Value="data/11-dat.csv" Time="2018-05-17T14.10.37-03";
+DF p8 d11
+Operation p9 "9-dissim <- dist(dat)" Value="dissim <- dist(dat)" Time="227.9" Script="0" Pos="12,3,12,21";
+CF p8 p9
+DF d11 p9
+Snapshot d12 "12-dissim" Value="data/12-dissim-PARTIAL.txt" Time="2018-05-17T14.10.37-03";
+DF p9 d12
+Operation p10 "10-pop <- lapply(as.list(aggr_levels), function(x) init_populat" Value="pop <- lapply(as.list(aggr_levels), function(x) init_populat" Time="228.23" Script="0" Pos="13,3,22,3";
+CF p9 p10
+DF d7 p10
+Snapshot d13 "13-pop" Value="data/13-pop-PARTIAL.txt" Time="2018-05-17T14.10.38-03";
+DF p10 d13
+Operation p11 "11-saveRDS(pop, file.path(main_path, \"results\", paste0(data_fil" Value="saveRDS(pop, file.path(main_path, \"results\", paste0(data_fil" Time="228.25" Script="0" Pos="23,3,23,82";
+CF p10 p11
+DF d13 p11
+DF d9 p11
+DF d10 p11
+Finish p12 "12-for loop" Value="for loop" Time="228.27" Script="NA" Pos="NA";
+CF p11 p12
+Finish p13 "13-for (data_file in calib_files) {    dat <- readRDS(file.path" Value="for (data_file in calib_files) {    dat <- readRDS(file.path" Time="228.27" Script="0" Pos="9,1,24,1";
+CF p12 p13
+Operation p14 "14-stopCluster(cl)" Value="stopCluster(cl)" Time="228.27" Script="0" Pos="26,1,26,15";
+CF p13 p14
+DF d4 p14
+Finish p15 "15-init_pop2.R" Value="init_pop2.R" Time="228.28" Script="NA" Pos="NA";
+CF p14 p15
+

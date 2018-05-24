@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1526326231338.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "663715638",
+    "id" : "C6287DAE",
+    "lastKnownWriteTime" : 1526991711,
+    "last_content_update" : 1526991711,
+    "path" : "~/!filesync/mestrado/18.1_e-science/trabalho/script/exec.R",
+    "project_path" : "exec.R",
+    "properties" : {
+        "cursorPosition" : "63,0",
+        "scrollLine" : "56",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

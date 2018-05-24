@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1526600111054.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1253506015",
+    "id" : "4B13EB43",
+    "lastKnownWriteTime" : 1523042588,
+    "last_content_update" : 1523042588,
+    "path" : "~/Desktop/filesync/repos/magga/R/func_sdc.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "6,2",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

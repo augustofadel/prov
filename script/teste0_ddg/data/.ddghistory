@@ -1,0 +1,512 @@
+pop = pop,
+pk = param$pop_size,
+tot_ger = param$generations,
+pe = param$elite,
+pm = param$mutant,
+pr = param$survival,
+nuc = ncores,
+verbose = T
+)
+magga_path <- '~/Desktop/filesync/repos/magga/R'
+source(file.path(magga_path, 'func_aloise.R'))
+source(file.path(magga_path, 'func_aux.R'))
+source(file.path(magga_path, 'func_brkga.R'))
+source(file.path(magga_path, 'func_init_mst.R'))
+source(file.path(magga_path, 'func_init_pop.R'))
+source(file.path(magga_path, 'func_init_tsp.R'))
+source(file.path(magga_path, 'func_microagg_brkga.R'))
+source(file.path(magga_path, 'func_sdc.R'))
+sol <- magga(
+dataset = dat,
+dissim = dissim,
+n_agreg = param$aggr,
+metricas = param$fobj,
+pop = pop,
+pk = param$pop_size,
+tot_ger = param$generations,
+pe = param$elite,
+pm = param$mutant,
+pr = param$survival,
+nuc = ncores,
+verbose = T
+)
+source('~/Desktop/filesync/repos/magga/R/func_microagg_brkga.R')
+sol <- magga(
+dataset = dat,
+dissim = dissim,
+n_agreg = param$aggr,
+metricas = param$fobj,
+pop = pop,
+pk = param$pop_size,
+tot_ger = param$generations,
+pe = param$elite,
+pm = param$mutant,
+pr = param$survival,
+nuc = ncores,
+verbose = T
+)
+sol <- magga(
+dataset = dat,
+dissim = dissim,
+n_agreg = param$aggr,
+metricas = param$fobj,
+pop = pop,
+pk = param$pop_size,
+tot_ger = param$generations,
+pe = param$elite,
+pm = param$mutant,
+pr = param$survival,
+nuc = ncores,
+verbose = T
+)
+dat <-
+dataset %>%
+data.table::data.table() %>%
+dplyr::select((1:ncol(dataset))[!tipo])
+dataset = dat
+dat <-
+dataset %>%
+data.table::data.table() %>%
+dplyr::select((1:ncol(dataset))[!tipo])
+tipo <- !dataset %>% sapply(class) %in% c('numeric', 'integer')
+dat <-
+dataset %>%
+data.table::data.table() %>%
+dplyr::select((1:ncol(dataset))[!tipo])
+n_obj <- nrow(dat)
+n_agreg <- sort(n_agreg)
+cl <- parallel::makeCluster(nuc)
+cl <- parallel::makeCluster(2)
+# fitness <-
+#   foreach::foreach(
+#     j = 1:ncol(pop[[i]]),
+#     .combine = 'cbind',
+#     .packages = c('data.table', 'dplyr', 'pdist'),
+#     .export = c('fit', 'agreg', 'DLD', 'SDID', 'IL1', 'IL2', 'IL3')
+#   ) %dopar% {
+#     fit(dat, pop[[i]][ , j], metricas)
+#   }
+clusterExport(cl, list('fit', 'dat', 'metricas'))
+metricas = param$fobj
+# fitness <-
+#   foreach::foreach(
+#     j = 1:ncol(pop[[i]]),
+#     .combine = 'cbind',
+#     .packages = c('data.table', 'dplyr', 'pdist'),
+#     .export = c('fit', 'agreg', 'DLD', 'SDID', 'IL1', 'IL2', 'IL3')
+#   ) %dopar% {
+#     fit(dat, pop[[i]][ , j], metricas)
+#   }
+clusterExport(cl, list('fit', 'dat', 'metricas'))
+# fitness <-
+#   foreach::foreach(
+#     j = 1:ncol(pop[[i]]),
+#     .combine = 'cbind',
+#     .packages = c('data.table', 'dplyr', 'pdist'),
+#     .export = c('fit', 'agreg', 'DLD', 'SDID', 'IL1', 'IL2', 'IL3')
+#   ) %dopar% {
+#     fit(dat, pop[[i]][ , j], metricas)
+#   }
+clusterExport(cl, list('fit', 'dat', 'metricas'))
+fitness <- parallel::parApply(
+cl,
+pop[[i]],
+2,
+function(x) {fit(dat, x, metricas)}
+)
+# fitness <-
+#   foreach::foreach(
+#     j = 1:ncol(pop[[i]]),
+#     .combine = 'cbind',
+#     .packages = c('data.table', 'dplyr', 'pdist'),
+#     .export = c('fit', 'agreg', 'DLD', 'SDID', 'IL1', 'IL2', 'IL3')
+#   ) %dopar% {
+#     fit(dat, pop[[i]][ , j], metricas)
+#   }
+clusterExport(cl, list('fit', 'dat', 'metricas', 'agreg'))
+fitness <- parallel::parApply(
+cl,
+pop[[i]],
+2,
+function(x) {fit(dat, x, metricas)}
+)
+# fitness <-
+#   foreach::foreach(
+#     j = 1:ncol(pop[[i]]),
+#     .combine = 'cbind',
+#     .packages = c('data.table', 'dplyr', 'pdist'),
+#     .export = c('fit', 'agreg', 'DLD', 'SDID', 'IL1', 'IL2', 'IL3')
+#   ) %dopar% {
+#     fit(dat, pop[[i]][ , j], metricas)
+#   }
+clusterExport(cl, list('fit', 'dat', 'metricas', 'agreg', '%>%'))
+fitness <- parallel::parApply(
+cl,
+pop[[i]],
+2,
+function(x) {fit(dat, x, metricas)}
+)
+# fitness <-
+#   foreach::foreach(
+#     j = 1:ncol(pop[[i]]),
+#     .combine = 'cbind',
+#     .packages = c('data.table', 'dplyr', 'pdist'),
+#     .export = c('fit', 'agreg', 'DLD', 'SDID', 'IL1', 'IL2', 'IL3')
+#   ) %dopar% {
+#     fit(dat, pop[[i]][ , j], metricas)
+#   }
+clusterExport(cl, list('fit', 'dat', 'metricas', 'agreg', '%>%', 'IL1', 'IL2', 'DLD'))
+fitness <- parallel::parApply(
+cl,
+pop[[i]],
+2,
+function(x) {fit(dat, x, metricas)}
+)
+fitness
+source('~/Desktop/filesync/repos/magga/R/func_microagg_brkga.R')
+sol <- magga(
+dataset = dat,
+dissim = dissim,
+n_agreg = param$aggr,
+metricas = param$fobj,
+pop = pop,
+pk = param$pop_size,
+tot_ger = param$generations,
+pe = param$elite,
+pm = param$mutant,
+pr = param$survival,
+nuc = ncores,
+verbose = T
+)
+sol <- magga(
+dataset = dat,
+dissim = dissim,
+n_agreg = param$aggr,
+metricas = 'IL1',
+pop = pop,
+pk = param$pop_size,
+tot_ger = param$generations,
+pe = param$elite,
+pm = param$mutant,
+pr = param$survival,
+nuc = ncores,
+verbose = T
+)
+source('~/Desktop/filesync/repos/magga/R/func_microagg_brkga.R')
+sol <- magga(
+dataset = dat,
+dissim = dissim,
+n_agreg = param$aggr,
+metricas = 'IL1',
+pop = pop,
+pk = param$pop_size,
+tot_ger = param$generations,
+pe = param$elite,
+pm = param$mutant,
+pr = param$survival,
+nuc = ncores,
+verbose = T
+)
+library(foreach)
+sol <- magga(
+dataset = dat,
+dissim = dissim,
+n_agreg = param$aggr,
+metricas = 'IL1',
+pop = pop,
+pk = param$pop_size,
+tot_ger = param$generations,
+pe = param$elite,
+pm = param$mutant,
+pr = param$survival,
+nuc = ncores,
+verbose = T
+)
+sol <- magga(
+dataset = dat,
+dissim = dissim,
+n_agreg = param$aggr,
+metricas = param$fobj,
+pop = pop,
+pk = param$pop_size,
+tot_ger = param$generations,
+pe = param$elite,
+pm = param$mutant,
+pr = param$survival,
+nuc = ncores,
+verbose = T
+)
+source('~/Desktop/filesync/repos/magga/R/func_microagg_brkga.R')
+sol <- magga(
+dataset = dat,
+dissim = dissim,
+n_agreg = param$aggr,
+metricas = param$fobj,
+pop = pop,
+pk = param$pop_size,
+tot_ger = param$generations,
+pe = param$elite,
+pm = param$mutant,
+pr = param$survival,
+nuc = ncores,
+verbose = T
+)
+?toupper
+source('~/Desktop/filesync/repos/magga/R/func_microagg_brkga.R')
+sol <- magga(
+dataset = dat,
+dissim = dissim,
+n_agreg = param$aggr,
+metricas = param$fobj,
+pop = pop,
+init_method = param$init,
+pk = param$pop_size,
+tot_ger = param$generations,
+pe = param$elite,
+pm = param$mutant,
+pr = param$survival,
+nuc = ncores,
+verbose = T
+)
+source('~/Desktop/filesync/repos/magga/R/func_microagg_brkga.R')
+sol <- magga(
+dataset = dat,
+dissim = dissim,
+n_agreg = param$aggr,
+metricas = param$fobj,
+pop = pop,
+init_method = param$init,
+pk = param$pop_size,
+tot_ger = param$generations,
+pe = param$elite,
+pm = param$mutant,
+pr = param$survival,
+nuc = ncores,
+verbose = T
+)
+source('~/Desktop/filesync/repos/magga/R/func_microagg_brkga.R')
+sol <- magga(
+dataset = dat,
+dissim = dissim,
+n_agreg = param$aggr,
+metricas = param$fobj,
+pop = pop,
+init_method = param$init,
+pk = param$pop_size,
+tot_ger = param$generations,
+pe = param$elite,
+pm = param$mutant,
+pr = param$survival,
+nuc = ncores,
+verbose = T
+)
+size_mutant
+pk = param$pop_size
+pe = param$elite
+pm = param$mutant
+pop_atual <- pop[[i]]
+size_pop <- ncol(pop_atual)
+size_elit <- round(pe * size_pop)
+size_mutant <- round(pm * size_pop)
+size_mutant
+pop_atual
+size_pop
+n_agreg[[i]]
+n_agreg = param$aggr
+n_agreg <- sort(n_agreg)
+n_agreg
+n_agreg <- sort(n_agreg) %>% as.list()
+n_agreg
+n_agreg[[i]]
+parSapply(
+cl,
+1:size_mutant,
+function(x) kmeans_ma(dat, n_agreg[[i]], dissim = dissim)
+)
+clusterExport(cl, list('kmeans_ma', 'clus_regen'))
+parSapply(
+cl,
+1:size_mutant,
+function(x) kmeans_ma(dat, n_agreg[[i]], dissim = dissim)
+)
+clusterExport(cl, list('kmeans_ma', 'clus_regen', 'n_agreg'))
+mutant <- parSapply(
+cl,
+1:size_mutant,
+function(x) kmeans_ma(dat, n_agreg[[i]], dissim = dissim)
+)
+clusterExport(cl, list('kmeans_ma', 'clus_regen', 'n_agreg', 'i'))
+mutant <- parSapply(
+cl,
+1:size_mutant,
+function(x) kmeans_ma(dat, n_agreg[[i]], dissim = dissim)
+)
+clusterExport(cl, list('kmeans_ma', 'clus_regen', 'n_agreg', 'i', 'dissim'))
+mutant <- parSapply(
+cl,
+1:size_mutant,
+function(x) kmeans_ma(dat, n_agreg[[i]], dissim = dissim)
+)
+dim(dissim)
+class(dissim)
+mutant <- parSapply(
+cl,
+1:size_mutant,
+function(x) kmeans_ma(dat, n_agreg[[i]], dissim = as.matrix(dissim))
+)
+mutant
+source('~/Desktop/filesync/repos/magga/R/func_microagg_brkga.R')
+source('~/Desktop/filesync/repos/magga/R/func_microagg_brkga.R')
+sol <- magga(
+dataset = dat,
+dissim = dissim,
+n_agreg = param$aggr,
+metricas = param$fobj,
+pop = pop,
+init_method = param$init,
+pk = param$pop_size,
+tot_ger = param$generations,
+pe = param$elite,
+pm = param$mutant,
+pr = param$survival,
+nuc = ncores,
+verbose = T
+)
+sol <- magga(
+dataset = dat,
+dissim = dissim,
+n_agreg = param$aggr,
+metricas = param$fobj,
+pop = pop,
+init_method = param$init,
+pk = param$pop_size,
+tot_ger = param$generations,
+pe = param$elite,
+pm = param$mutant,
+pr = param$survival,
+nuc = ncores,
+verbose = F
+)
+tmp <- try({
+system.time({
+sol <- magga(
+dataset = dat,
+dissim = dissim,
+n_agreg = param$aggr,
+metricas = param$fobj,
+pop = pop,
+init_method = param$init,
+pk = param$pop_size,
+tot_ger = param$generations,
+pe = param$elite,
+pm = param$mutant,
+pr = param$survival,
+nuc = ncores,
+verbose = F
+)
+})
+})
+tmp
+tmp[[3]]
+fit(dat, sol, c('IL1', 'IL2', 'DLD'))
+dat <- readRDS(file.path(data_path, paste0(data_file, '.rds'))) %>%
+as.data.table
+fit(dat, sol, c('IL1', 'IL2', 'DLD'))
+clus <- sol
+clus <- data.table::data.table(clus)
+dat.agreg <- dat[, lapply(.SD, mean), by = clus]
+clus
+sol
+fit(dat, sol[, 1], c('IL1', 'IL2', 'DLD'))
+class(sol)
+fit(dat, sol[[1]][, 1], c('IL1', 'IL2', 'DLD'))
+?ddr.run
+?ddg.run
+head(result)
+ddg.run(
+file.path(main_path, 'script', 'teste.R')
+)
+##-ddg-- Thu May 17 20:43:10 2018 ------##
+ddg.display()
+head(result)
+ddg.display()
+ddg.display()
+ddg.display()
+library(RDataTracker)
+library(RDataTracker)
+ddg.display()
+library(RDataTracker)
+library(profvis)
+library(parallel)
+library(dplyr)
+library(stringr)
+library(TSP)
+library(data.table)
+library(magga)
+main_path <- '~/!filesync/mestrado/18.1_e-science/trabalho'
+data_path <- '~/!filesync/instancias/sdc'
+main_path <- '~/Desktop/filesync/mestrado/18.1_e-science/trabalho'
+data_path <- '~/Desktop/filesync/instancias/sdc'
+# files <- list.files(data_path, '.rds')
+calib_files <- c(
+'DS1-200DATA.rds',
+'DS2-Uniform400.rds',
+'DS3-censo_Rio de Janeiro.rds',
+'DS4-Tarragona.rds'
+)
+# calib_files <- 'DS1-200DATA.rds'
+aggr_levels <- c(3, 4, 5)
+pop_size <- 1000
+ncores <- 2
+ddg.run(
+file.path(main_path, 'script', 'teste.R'),
+display = T
+)
+##-ddg-- Thu May 17 21:11:42 2018 ------##
+R.Version()
+install_github('andreacirilloac/updateR')
+devtools::install_github('andreacirilloac/updateR')
+library(RDataTracker)
+library(devtools)
+install.packages('devtools')
+install_github('End-to-end-provenance/RDataTracker')
+library(devtools)
+install_github('End-to-end-provenance/RDataTracker')
+library(RDataTracker)
+ddg.run(
+file.path(main_path, 'script', 'teste.R'),
+display = T
+)
+main_path <- '~/!filesync/mestrado/18.1_e-science/trabalho'
+data_path <- '~/!filesync/instancias/sdc'
+main_path <- '~/Desktop/filesync/mestrado/18.1_e-science/trabalho'
+data_path <- '~/Desktop/filesync/instancias/sdc'
+ddg.run(
+file.path(main_path, 'script', 'teste.R'),
+display = T
+)
+##-ddg-- Thu May 17 21:48:41 2018 ------##
+ddg.display()
+library(RDataTracker)
+ddg.display()
+ddg.run(
+file.path(main_path, 'script', 'teste0.R'),
+display = T
+)
+main_path <- '~/!filesync/mestrado/18.1_e-science/trabalho'
+ddg.run(
+file.path(main_path, 'script', 'teste0.R'),
+display = T
+)
+##------ Fri May 18 12:38:55 2018 ------##
+kmeans(iris[,-5], 3)
+ddg.run(
+file.path(main_path, 'script', 'teste0.R'),
+display = T
+)
+##------ Fri May 18 12:39:35 2018 ------##
+ddg.run(
+file.path(main_path, 'script', 'teste0.R'),
+display = T
+)
+##------ Fri May 18 12:40:28 2018 ------##

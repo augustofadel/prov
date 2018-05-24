@@ -1,0 +1,472 @@
+{
+
+"prefix" : {
+"prov" : "http://www.w3.org/ns/prov#",
+"rdt" : "http://rdatatracker.org/"
+},
+"activity":{
+
+"p1" : {
+"rdt:name" : "init_pop3.R",
+"rdt:type" : "Start",
+"rdt:elapsedTime" : "165.18",
+"rdt:scriptNum" : "NA",
+"rdt:startLine" : "NA",
+"rdt:startCol" : "NA",
+"rdt:endLine" : "NA",
+"rdt:endCol" : "NA"
+} ,
+
+"p2" : {
+"rdt:name" : "dissim <- dist(dat) %>% as.matrix",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "165.2",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "3",
+"rdt:startCol" : "1",
+"rdt:endLine" : "3",
+"rdt:endCol" : "33"
+} ,
+
+"p3" : {
+"rdt:name" : "n_obj <- nrow(dat)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "165.21",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "4",
+"rdt:startCol" : "1",
+"rdt:endLine" : "4",
+"rdt:endCol" : "18"
+} ,
+
+"p4" : {
+"rdt:name" : "cl <- makeCluster(ncores)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "165.24",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "6",
+"rdt:startCol" : "1",
+"rdt:endLine" : "6",
+"rdt:endCol" : "25"
+} ,
+
+"p5" : {
+"rdt:name" : "clusterExport(cl, list(\"init_population\", \"diameter\", \"dat\",",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "165.24",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "7",
+"rdt:startCol" : "1",
+"rdt:endLine" : "7",
+"rdt:endCol" : "97"
+} ,
+
+"p6" : {
+"rdt:name" : "for (data_file in calib_files) {    dat <- readRDS(file.path",
+"rdt:type" : "Start",
+"rdt:elapsedTime" : "165.25",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "9",
+"rdt:startCol" : "1",
+"rdt:endLine" : "24",
+"rdt:endCol" : "1"
+} ,
+
+"p7" : {
+"rdt:name" : "for loop",
+"rdt:type" : "Start",
+"rdt:elapsedTime" : "165.28",
+"rdt:scriptNum" : "NA",
+"rdt:startLine" : "NA",
+"rdt:startCol" : "NA",
+"rdt:endLine" : "NA",
+"rdt:endCol" : "NA"
+} ,
+
+"p8" : {
+"rdt:name" : "data_file <- DS1-200DATA.rds",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "165.28",
+"rdt:scriptNum" : "NA",
+"rdt:startLine" : "NA",
+"rdt:startCol" : "NA",
+"rdt:endLine" : "NA",
+"rdt:endCol" : "NA"
+} ,
+
+"p9" : {
+"rdt:name" : "dat <- readRDS(file.path(data_path, data_file))",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "165.3",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "11",
+"rdt:startCol" : "3",
+"rdt:endLine" : "11",
+"rdt:endCol" : "49"
+} ,
+
+"p10" : {
+"rdt:name" : "dissim <- dist(dat)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "165.32",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "12",
+"rdt:startCol" : "3",
+"rdt:endLine" : "12",
+"rdt:endCol" : "21"
+} ,
+
+"p11" : {
+"rdt:name" : "pop <- lapply(as.list(aggr_levels), function(x) init_populat",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "165.44",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "13",
+"rdt:startCol" : "3",
+"rdt:endLine" : "22",
+"rdt:endCol" : "3"
+} ,
+
+"p12" : {
+"rdt:name" : "for (data_file in calib_files) {    dat <- readRDS(file.path",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "165.44",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "9",
+"rdt:startCol" : "1",
+"rdt:endLine" : "24",
+"rdt:endCol" : "1"
+} ,
+
+"environment" : {
+"rdt:name" : "environment",
+"rdt:architecture" : "x86_64",
+"rdt:operatingSystem" : "windows",
+"rdt:language" : "R",
+"rdt:rVersion" : "R version 3.4.0 (2017-04-21)",
+"rdt:script" : "D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script/init_pop3.R",
+"rdt:sourcedScripts" : ""
+,
+"rdt:scriptTimeStamp" : "2018-05-17T13.58.33-03",
+"rdt:workingDirectory" : "D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script",
+"rdt:ddgDirectory" : "D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script/init_pop3_ddg",
+"rdt:ddgTimeStamp" : "2018-05-17T14.10.42-03",
+"rdt:rdatatrackerVersion" : "2.26.0",
+"rdt:installedPackages" : [
+	{"package" : "", "version" : ""}]
+}},
+"entity":{
+
+"d1" : {
+"rdt:name" : "dat [ENV]",
+"rdt:value" : "data/1-dat.csv",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d2" : {
+"rdt:name" : "dissim",
+"rdt:value" : "data/2-dissim-PARTIAL.csv",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d3" : {
+"rdt:name" : "n_obj",
+"rdt:value" : "200",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d4" : {
+"rdt:name" : "ncores [ENV]",
+"rdt:value" : "8",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d5" : {
+"rdt:name" : "cl",
+"rdt:value" : "data/5-cl-PARTIAL.txt",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d6" : {
+"rdt:name" : "calib_files [ENV]",
+"rdt:value" : "\"DS1-200DATA.rds\"",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d7" : {
+"rdt:name" : "data_path [ENV]",
+"rdt:value" : "\"~/!filesync/instancias/sdc\"",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d8" : {
+"rdt:name" : "aggr_levels [ENV]",
+"rdt:value" : "data/8-aggr_levels.csv",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d9" : {
+"rdt:name" : "pop [ENV]",
+"rdt:value" : "data/9-pop-PARTIAL.txt",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d10" : {
+"rdt:name" : "main_path [ENV]",
+"rdt:value" : "\"~/!filesync/mestrado/18.1_e-science/trabalho\"",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d11" : {
+"rdt:name" : "data_file",
+"rdt:value" : "\"DS1-200DATA.rds\"",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d12" : {
+"rdt:name" : "dat",
+"rdt:value" : "data/12-dat.csv",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d13" : {
+"rdt:name" : "dissim",
+"rdt:value" : "data/13-dissim-PARTIAL.txt",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d14" : {
+"rdt:name" : "error.msg",
+"rdt:value" : "\"Error in dissim[x[1], x[2]]: incorrect number of dimensions \"",
+"rdt:type" : "Exception",
+"rdt:scope" : "ddg.library",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d15" : {
+"rdt:name" : "error.msg",
+"rdt:value" : "\"Error in dissim[x[1], x[2]]: incorrect number of dimensions \"",
+"rdt:type" : "Exception",
+"rdt:scope" : "ddg.library",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}},
+"wasInformedBy":{
+
+"e1" : {
+"prov:informant" : "p1",
+"prov:informed" : "p2"
+} ,
+
+"e4" : {
+"prov:informant" : "p2",
+"prov:informed" : "p3"
+} ,
+
+"e7" : {
+"prov:informant" : "p3",
+"prov:informed" : "p4"
+} ,
+
+"e10" : {
+"prov:informant" : "p4",
+"prov:informed" : "p5"
+} ,
+
+"e12" : {
+"prov:informant" : "p5",
+"prov:informed" : "p6"
+} ,
+
+"e19" : {
+"prov:informant" : "p6",
+"prov:informed" : "p7"
+} ,
+
+"e20" : {
+"prov:informant" : "p7",
+"prov:informed" : "p8"
+} ,
+
+"e22" : {
+"prov:informant" : "p8",
+"prov:informed" : "p9"
+} ,
+
+"e26" : {
+"prov:informant" : "p9",
+"prov:informed" : "p10"
+} ,
+
+"e29" : {
+"prov:informant" : "p10",
+"prov:informed" : "p11"
+} ,
+
+"e31" : {
+"prov:informant" : "p11",
+"prov:informed" : "p12"
+}},
+"wasGeneratedBy":{
+
+"e3" : {
+"prov:entity" : "d2",
+"prov:activity" : "p2"
+} ,
+
+"e6" : {
+"prov:entity" : "d3",
+"prov:activity" : "p3"
+} ,
+
+"e9" : {
+"prov:entity" : "d5",
+"prov:activity" : "p4"
+} ,
+
+"e21" : {
+"prov:entity" : "d11",
+"prov:activity" : "p8"
+} ,
+
+"e25" : {
+"prov:entity" : "d12",
+"prov:activity" : "p9"
+} ,
+
+"e28" : {
+"prov:entity" : "d13",
+"prov:activity" : "p10"
+} ,
+
+"e30" : {
+"prov:entity" : "d14",
+"prov:activity" : "p11"
+} ,
+
+"e32" : {
+"prov:entity" : "d15",
+"prov:activity" : "p12"
+}},
+"used":{
+
+"e2" : {
+"prov:activity" : "p2",
+"prov:entity" : "d1"
+} ,
+
+"e5" : {
+"prov:activity" : "p3",
+"prov:entity" : "d1"
+} ,
+
+"e8" : {
+"prov:activity" : "p4",
+"prov:entity" : "d4"
+} ,
+
+"e11" : {
+"prov:activity" : "p5",
+"prov:entity" : "d5"
+} ,
+
+"e13" : {
+"prov:activity" : "p6",
+"prov:entity" : "d6"
+} ,
+
+"e14" : {
+"prov:activity" : "p6",
+"prov:entity" : "d7"
+} ,
+
+"e15" : {
+"prov:activity" : "p6",
+"prov:entity" : "d1"
+} ,
+
+"e16" : {
+"prov:activity" : "p6",
+"prov:entity" : "d8"
+} ,
+
+"e17" : {
+"prov:activity" : "p6",
+"prov:entity" : "d9"
+} ,
+
+"e18" : {
+"prov:activity" : "p6",
+"prov:entity" : "d10"
+} ,
+
+"e23" : {
+"prov:activity" : "p9",
+"prov:entity" : "d7"
+} ,
+
+"e24" : {
+"prov:activity" : "p9",
+"prov:entity" : "d11"
+} ,
+
+"e27" : {
+"prov:activity" : "p10",
+"prov:entity" : "d12"
+}}
+}

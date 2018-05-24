@@ -1,0 +1,25 @@
+Architecture="x86_64"
+OperatingSystem="unix"
+Language="R"
+LanguageVersion="R version 3.5.0 (2018-04-23)"
+RDataTrackerVersion="2.26.0"
+Script="/Users/augustofadel/Desktop/filesync/mestrado/18.1_e-science/trabalho/script/teste.R"
+SourcedScripts=""
+ProcessFileTimestamp="2018-05-17T20.43.03-03"
+WorkingDirectory="/Users/augustofadel/Desktop/filesync/mestrado/18.1_e-science/trabalho/script"
+DDGDirectory="/Users/augustofadel/Desktop/filesync/mestrado/18.1_e-science/trabalho/script/teste_ddg"
+DateTime="2018-05-17T21.48.41-03"
+InstalledPackages="base 3.5.0, datasets 3.5.0, devtools 1.13.5, graphics 3.5.0, grDevices 3.5.0, methods 3.5.0, RDataTracker 2.26.0, stats 3.5.0, utils 3.5.0"
+3
+Start p1 "1-teste.R" Value="teste.R" Time="0.420999999999999" Script="NA" Pos="NA";
+Operation p2 "2-result <- readRDS(file.path(main_path, \"results\", \"exp_resul" Value="result <- readRDS(file.path(main_path, \"results\", \"exp_resul" Time="0.771999999999998" Script="0" Pos="1,1,1,69";
+CF p1 p2
+Data d1 "1-main_path [ENV]" Value="\"~/Desktop/filesync/mestrado/18.1_e-science/trabalho\"";
+DF d1 p2
+Snapshot d2 "2-result" Value="data/2-result-PARTIAL.csv" Time="2018-05-17T21.48.42-03";
+DF p2 d2
+Operation p3 "3-cl <- makeCluster(ncores)" Value="cl <- makeCluster(ncores)" Time="0.823" Script="0" Pos="3,1,3,25";
+CF p2 p3
+Exception d3 "3-error.msg" Value="\"Error in makeCluster(ncores): could not find function \"makeCluster\" \"";
+DF p3 d3
+

@@ -1,0 +1,400 @@
+{
+
+"prefix" : {
+"prov" : "http://www.w3.org/ns/prov#",
+"rdt" : "http://rdatatracker.org/"
+},
+"activity":{
+
+"p1" : {
+"rdt:name" : "init_pop1.R",
+"rdt:type" : "Start",
+"rdt:elapsedTime" : "163.87",
+"rdt:scriptNum" : "NA",
+"rdt:startLine" : "NA",
+"rdt:startCol" : "NA",
+"rdt:endLine" : "NA",
+"rdt:endCol" : "NA"
+} ,
+
+"p2" : {
+"rdt:name" : "cl <- makeCluster(ncores)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "163.9",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "11",
+"rdt:startCol" : "1",
+"rdt:endLine" : "11",
+"rdt:endCol" : "25"
+} ,
+
+"p3" : {
+"rdt:name" : "clusterExport(cl, list(\"kmeans_ma\", \"dat\", \"aggr_levels\"))",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "163.92",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "12",
+"rdt:startCol" : "1",
+"rdt:endLine" : "12",
+"rdt:endCol" : "58"
+} ,
+
+"p4" : {
+"rdt:name" : "for (data_file in calib_files) {    dat <- readRDS(file.path",
+"rdt:type" : "Start",
+"rdt:elapsedTime" : "163.93",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "14",
+"rdt:startCol" : "1",
+"rdt:endLine" : "22",
+"rdt:endCol" : "1"
+} ,
+
+"p5" : {
+"rdt:name" : "for loop",
+"rdt:type" : "Start",
+"rdt:elapsedTime" : "163.98",
+"rdt:scriptNum" : "NA",
+"rdt:startLine" : "NA",
+"rdt:startCol" : "NA",
+"rdt:endLine" : "NA",
+"rdt:endCol" : "NA"
+} ,
+
+"p6" : {
+"rdt:name" : "data_file <- DS1-200DATA.rds",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "163.98",
+"rdt:scriptNum" : "NA",
+"rdt:startLine" : "NA",
+"rdt:startCol" : "NA",
+"rdt:endLine" : "NA",
+"rdt:endCol" : "NA"
+} ,
+
+"p7" : {
+"rdt:name" : "dat <- readRDS(file.path(data_path, data_file))",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "163.98",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "16",
+"rdt:startCol" : "3",
+"rdt:endLine" : "16",
+"rdt:endCol" : "49"
+} ,
+
+"p8" : {
+"rdt:name" : "dissim <- dist(dat)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "164.01",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "17",
+"rdt:startCol" : "3",
+"rdt:endLine" : "17",
+"rdt:endCol" : "21"
+} ,
+
+"p9" : {
+"rdt:name" : "pop <- lapply(as.list(aggr_levels), function(x) {    parSapp",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "164.1",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "18",
+"rdt:startCol" : "3",
+"rdt:endLine" : "20",
+"rdt:endCol" : "4"
+} ,
+
+"p10" : {
+"rdt:name" : "for (data_file in calib_files) {    dat <- readRDS(file.path",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "164.1",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "14",
+"rdt:startCol" : "1",
+"rdt:endLine" : "22",
+"rdt:endCol" : "1"
+} ,
+
+"environment" : {
+"rdt:name" : "environment",
+"rdt:architecture" : "x86_64",
+"rdt:operatingSystem" : "windows",
+"rdt:language" : "R",
+"rdt:rVersion" : "R version 3.4.0 (2017-04-21)",
+"rdt:script" : "D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script/init_pop1.R",
+"rdt:sourcedScripts" : ""
+,
+"rdt:scriptTimeStamp" : "2018-05-17T14.05.25-03",
+"rdt:workingDirectory" : "D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script",
+"rdt:ddgDirectory" : "D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script/init_pop1_ddg",
+"rdt:ddgTimeStamp" : "2018-05-17T14.10.28-03",
+"rdt:rdatatrackerVersion" : "2.26.0",
+"rdt:installedPackages" : [
+	{"package" : "", "version" : ""}]
+}},
+"entity":{
+
+"d1" : {
+"rdt:name" : "ncores [ENV]",
+"rdt:value" : "8",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d2" : {
+"rdt:name" : "cl",
+"rdt:value" : "data/2-cl-PARTIAL.txt",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d3" : {
+"rdt:name" : "calib_files [ENV]",
+"rdt:value" : "\"DS1-200DATA.rds\"",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d4" : {
+"rdt:name" : "data_path [ENV]",
+"rdt:value" : "\"~/!filesync/instancias/sdc\"",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d5" : {
+"rdt:name" : "dat [ENV]",
+"rdt:value" : "data/5-dat.csv",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d6" : {
+"rdt:name" : "aggr_levels [ENV]",
+"rdt:value" : "data/6-aggr_levels.csv",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d7" : {
+"rdt:name" : "pop [ENV]",
+"rdt:value" : "data/7-pop-PARTIAL.txt",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d8" : {
+"rdt:name" : "main_path [ENV]",
+"rdt:value" : "\"~/!filesync/mestrado/18.1_e-science/trabalho\"",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d9" : {
+"rdt:name" : "data_file",
+"rdt:value" : "\"DS1-200DATA.rds\"",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d10" : {
+"rdt:name" : "dat",
+"rdt:value" : "data/10-dat.csv",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d11" : {
+"rdt:name" : "dissim",
+"rdt:value" : "data/11-dissim-PARTIAL.txt",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d12" : {
+"rdt:name" : "error.msg",
+"rdt:value" : "\"Error in checkForRemoteErrors(val): 8 nodes produced errors; first error: unused argument (dissim = dissim) \"",
+"rdt:type" : "Exception",
+"rdt:scope" : "ddg.library",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d13" : {
+"rdt:name" : "error.msg",
+"rdt:value" : "\"Error in checkForRemoteErrors(val): 8 nodes produced errors; first error: unused argument (dissim = dissim) \"",
+"rdt:type" : "Exception",
+"rdt:scope" : "ddg.library",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}},
+"wasInformedBy":{
+
+"e1" : {
+"prov:informant" : "p1",
+"prov:informed" : "p2"
+} ,
+
+"e4" : {
+"prov:informant" : "p2",
+"prov:informed" : "p3"
+} ,
+
+"e6" : {
+"prov:informant" : "p3",
+"prov:informed" : "p4"
+} ,
+
+"e13" : {
+"prov:informant" : "p4",
+"prov:informed" : "p5"
+} ,
+
+"e14" : {
+"prov:informant" : "p5",
+"prov:informed" : "p6"
+} ,
+
+"e16" : {
+"prov:informant" : "p6",
+"prov:informed" : "p7"
+} ,
+
+"e20" : {
+"prov:informant" : "p7",
+"prov:informed" : "p8"
+} ,
+
+"e23" : {
+"prov:informant" : "p8",
+"prov:informed" : "p9"
+} ,
+
+"e25" : {
+"prov:informant" : "p9",
+"prov:informed" : "p10"
+}},
+"wasGeneratedBy":{
+
+"e3" : {
+"prov:entity" : "d2",
+"prov:activity" : "p2"
+} ,
+
+"e15" : {
+"prov:entity" : "d9",
+"prov:activity" : "p6"
+} ,
+
+"e19" : {
+"prov:entity" : "d10",
+"prov:activity" : "p7"
+} ,
+
+"e22" : {
+"prov:entity" : "d11",
+"prov:activity" : "p8"
+} ,
+
+"e24" : {
+"prov:entity" : "d12",
+"prov:activity" : "p9"
+} ,
+
+"e26" : {
+"prov:entity" : "d13",
+"prov:activity" : "p10"
+}},
+"used":{
+
+"e2" : {
+"prov:activity" : "p2",
+"prov:entity" : "d1"
+} ,
+
+"e5" : {
+"prov:activity" : "p3",
+"prov:entity" : "d2"
+} ,
+
+"e7" : {
+"prov:activity" : "p4",
+"prov:entity" : "d3"
+} ,
+
+"e8" : {
+"prov:activity" : "p4",
+"prov:entity" : "d4"
+} ,
+
+"e9" : {
+"prov:activity" : "p4",
+"prov:entity" : "d5"
+} ,
+
+"e10" : {
+"prov:activity" : "p4",
+"prov:entity" : "d6"
+} ,
+
+"e11" : {
+"prov:activity" : "p4",
+"prov:entity" : "d7"
+} ,
+
+"e12" : {
+"prov:activity" : "p4",
+"prov:entity" : "d8"
+} ,
+
+"e17" : {
+"prov:activity" : "p7",
+"prov:entity" : "d4"
+} ,
+
+"e18" : {
+"prov:activity" : "p7",
+"prov:entity" : "d9"
+} ,
+
+"e21" : {
+"prov:activity" : "p8",
+"prov:entity" : "d10"
+}}
+}

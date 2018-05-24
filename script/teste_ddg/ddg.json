@@ -1,0 +1,126 @@
+{
+
+"prefix" : {
+"prov" : "http://www.w3.org/ns/prov#",
+"rdt" : "http://rdatatracker.org/"
+},
+"activity":{
+
+"p1" : {
+"rdt:name" : "teste.R",
+"rdt:type" : "Start",
+"rdt:elapsedTime" : "0.420999999999999",
+"rdt:scriptNum" : "NA",
+"rdt:startLine" : "NA",
+"rdt:startCol" : "NA",
+"rdt:endLine" : "NA",
+"rdt:endCol" : "NA"
+} ,
+
+"p2" : {
+"rdt:name" : "result <- readRDS(file.path(main_path, \"results\", \"exp_resul",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "0.771999999999998",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "1",
+"rdt:startCol" : "1",
+"rdt:endLine" : "1",
+"rdt:endCol" : "69"
+} ,
+
+"p3" : {
+"rdt:name" : "cl <- makeCluster(ncores)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "0.823",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "3",
+"rdt:startCol" : "1",
+"rdt:endLine" : "3",
+"rdt:endCol" : "25"
+} ,
+
+"environment" : {
+"rdt:name" : "environment",
+"rdt:architecture" : "x86_64",
+"rdt:operatingSystem" : "unix",
+"rdt:language" : "R",
+"rdt:rVersion" : "R version 3.5.0 (2018-04-23)",
+"rdt:script" : "/Users/augustofadel/Desktop/filesync/mestrado/18.1_e-science/trabalho/script/teste.R",
+"rdt:sourcedScripts" : ""
+,
+"rdt:scriptTimeStamp" : "2018-05-17T20.43.03-03",
+"rdt:workingDirectory" : "/Users/augustofadel/Desktop/filesync/mestrado/18.1_e-science/trabalho/script",
+"rdt:ddgDirectory" : "/Users/augustofadel/Desktop/filesync/mestrado/18.1_e-science/trabalho/script/teste_ddg",
+"rdt:ddgTimeStamp" : "2018-05-17T21.48.41-03",
+"rdt:rdatatrackerVersion" : "2.26.0",
+"rdt:installedPackages" : [
+	{"package" : "base", "version" : "3.5.0"},
+	{"package" : "datasets", "version" : "3.5.0"},
+	{"package" : "devtools", "version" : "1.13.5"},
+	{"package" : "graphics", "version" : "3.5.0"},
+	{"package" : "grDevices", "version" : "3.5.0"},
+	{"package" : "methods", "version" : "3.5.0"},
+	{"package" : "RDataTracker", "version" : "2.26.0"},
+	{"package" : "stats", "version" : "3.5.0"},
+	{"package" : "utils", "version" : "3.5.0"}]
+}},
+"entity":{
+
+"d1" : {
+"rdt:name" : "main_path [ENV]",
+"rdt:value" : "\"~/Desktop/filesync/mestrado/18.1_e-science/trabalho\"",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d2" : {
+"rdt:name" : "result",
+"rdt:value" : "data/2-result-PARTIAL.csv",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d3" : {
+"rdt:name" : "error.msg",
+"rdt:value" : "\"Error in makeCluster(ncores): could not find function \"makeCluster\" \"",
+"rdt:type" : "Exception",
+"rdt:scope" : "ddg.library",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}},
+"wasInformedBy":{
+
+"e1" : {
+"prov:informant" : "p1",
+"prov:informed" : "p2"
+} ,
+
+"e4" : {
+"prov:informant" : "p2",
+"prov:informed" : "p3"
+}},
+"wasGeneratedBy":{
+
+"e3" : {
+"prov:entity" : "d2",
+"prov:activity" : "p2"
+} ,
+
+"e5" : {
+"prov:entity" : "d3",
+"prov:activity" : "p3"
+}},
+"used":{
+
+"e2" : {
+"prov:activity" : "p2",
+"prov:entity" : "d1"
+}}
+}

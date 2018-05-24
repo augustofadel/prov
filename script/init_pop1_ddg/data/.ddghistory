@@ -1,0 +1,404 @@
+library(devtools)
+httr::set_config(httr::config(ssl_verifypeer = F))
+# install_github('End-to-end-provenance/RDataTracker')
+install_github('augustofadel/magga')
+httr::set_config(httr::config(ssl_verifypeer = T))
+library(RDataTracker)
+library(profvis)
+library(magga)
+# main path
+main_path <- '~/!filesync/mestrado/18.1_e-science/trabalho'
+# params
+source(file.path(main_path, 'script', 'params.R'))
+# params
+source(file.path(main_path, 'script', 'params.R'))
+# kmeans
+script <- 'init_pop1'
+p <- profvis({
+source(file.path(main_path, 'script', paste0(script, '.R')))
+})
+httr::set_config(httr::config(ssl_verifypeer = F))
+# install_github('End-to-end-provenance/RDataTracker')
+install_github('augustofadel/magga')
+httr::set_config(httr::config(ssl_verifypeer = T))
+library(RDataTracker)
+library(profvis)
+library(magga)
+# main path
+main_path <- '~/!filesync/mestrado/18.1_e-science/trabalho'
+# params
+source(file.path(main_path, 'script', 'params.R'))
+# kmeans
+script <- 'init_pop1'
+p <- profvis({
+source(file.path(main_path, 'script', paste0(script, '.R')))
+})
+p
+htmlwidgets::saveWidget(p, file.path(main_path, 'results', paste0(script, '.html')))
+p <- profvis({
+ddg.run(
+r.script.path = file.path(main_path, 'script', paste0(script, '.R'))
+)
+})
+##------ Wed May 16 16:39:43 2018 ------##
+htmlwidgets::saveWidget(p, file.path(main_path, 'results', paste0(script, '_ddg.html')))
+p
+ddg.display()
+install.packages('future')
+library(future)
+p <- profvis({
+source(file.path(main_path, 'script', paste0(script, '.R')))
+})
+?future_sapply
+library(future)
+?future_sapply
+?future_sapply()
+?future_sapply
+??future_sapply
+install.packages('future.apply')
+library(future.apply)
+?future_sapply
+p <- profvis({
+source(file.path(main_path, 'script', paste0(script, '.R')))
+})
+p
+p <- profvis({
+source(file.path(main_path, 'script', paste0(script, '.R')))
+})
+p
+library(parallel)
+?parSapply
+cl <- makeCluster(4)
+for(data_file in calib_files) {
+cat(data_file, '\n')
+dat <- readRDS(file.path(data_path, data_file))
+pop <- lapply(as.list(aggr_levels), function(x) {
+parSapply(cl, 1:pop_size, function(y) kmeans_ma(dat, x))
+})
+saveRDS(pop, file.path(main_path, 'results', paste0(data_file, '_pop_kmeans.rds')))
+}
+stopCluster(cl)
+kmeans_ma()
+kmeans_ma
+cl <- makeCluster(4)
+clusterExport(cl, list('kmeans_ma'))
+for(data_file in calib_files) {
+cat(data_file, '\n')
+dat <- readRDS(file.path(data_path, data_file))
+pop <- lapply(as.list(aggr_levels), function(x) {
+parSapply(cl, 1:pop_size, function(y) kmeans_ma(dat, x))
+})
+saveRDS(pop, file.path(main_path, 'results', paste0(data_file, '_pop_kmeans.rds')))
+}
+stopCluster(cl)
+cl <- makeCluster(4)
+clusterExport(cl, list('kmeans_ma', 'dat', 'aggr'))
+for(data_file in calib_files) {
+cat(data_file, '\n')
+dat <- readRDS(file.path(data_path, data_file))
+pop <- lapply(as.list(aggr_levels), function(x) {
+parSapply(cl, 1:pop_size, function(y) kmeans_ma(dat, x))
+})
+saveRDS(pop, file.path(main_path, 'results', paste0(data_file, '_pop_kmeans.rds')))
+}
+stopCluster(cl)
+cl <- makeCluster(4)
+clusterExport(cl, list('kmeans_ma', 'dat', 'aggr_levels'))
+for(data_file in calib_files) {
+cat(data_file, '\n')
+dat <- readRDS(file.path(data_path, data_file))
+pop <- lapply(as.list(aggr_levels), function(x) {
+parSapply(cl, 1:pop_size, function(y) kmeans_ma(dat, x))
+})
+saveRDS(pop, file.path(main_path, 'results', paste0(data_file, '_pop_kmeans.rds')))
+}
+stopCluster(cl)
+ncores <- 8
+p <- profvis({
+source(file.path(main_path, 'script', paste0(script, '.R')))
+})
+p
+p <- profvis({
+ddg.run(
+r.script.path = file.path(main_path, 'script', paste0(script, '.R'))
+)
+})
+##------ Wed May 16 17:24:31 2018 ------##
+p
+set.seed(1)
+sample(1:10, 3)
+sample(1:10, 3)
+set.seed(1)
+sample(1:10, 3)
+init_tsp(dat)
+?cut_tour
+library(TSP)
+init_tsp(dat)
+init_tsp(dat) %>% table
+library(dplyr)
+init_tsp(dat) %>% table
+input <- init_tsp(dat)
+n_obj <- nrow(dat)
+pop <- lapply(
+as.list(aggr_levels),
+function(x) init_population(
+k = x,
+n_obj = n_obj,
+p = 10,
+input = input
+)
+)
+class(pop)
+length(pop)
+pop[[1]] %>% class
+pop[[1]] %>% dim
+pop[[1]]
+pop[[1]][,1]
+pop[[1]][,2]
+teste <- cbind(init_tsp(dat),init_tsp(dat),init_tsp(dat),init_tsp(dat),init_tsp(dat))
+head(teste)
+teste <- cbind(init_tsp(dat),init_tsp(dat),init_tsp(dat),init_tsp(dat),init_tsp(dat),init_tsp(dat),init_tsp(dat),init_tsp(dat),init_tsp(dat))
+head(teste)
+identical(teste)
+?identical
+sapply(list(1:10), init_tsp(dat)) %>% class
+sapply(list(1:10), function(x) init_tsp(dat)) %>% class
+sapply(list(1:10), function(x) init_tsp(dat)) %>% dim
+lapply(list(1:10), function(x) init_tsp(dat)) %>% class
+lapply(list(1:10), function(x) init_tsp(dat)) %>% lenght
+lapply(list(1:10), function(x) init_tsp(dat)) %>% length
+sapply(1:10, function(x) init_tsp(dat)) %>% dim
+teste <- sapply(1:100, function(x) init_tsp(dat))
+apply(teste, 2, function(x) {
+apply(teste, 2, function(y) {identical(x, y)})
+})
+result <- apply(teste, 2, function(x) {
+apply(teste, 2, function(y) {identical(x, y)})
+})
+dim(result)
+head(result * 1)
+apply(result, 1, sum)
+apply(result, 1, sum) - 1
+sum(apply(result, 1, sum) - 1)
+sum(apply(result, 2, sum) - 1)
+tot <- 1000
+teste <- sapply(1:tot, function(x) init_tsp(dat))
+result <- apply(teste, 2, function(x) {
+apply(teste, 2, function(y) {identical(x, y)})
+})
+sum(apply(result, 1, sum) - 1) / tot
+sum(apply(result, 1, sum) - 1)
+apply(result, 1, sum)
+sum(apply(result, 1, sum) - 1) / (2 * tot)
+sum(apply(result, 1, sum) - 1) / (2 * tot^2)
+httr::set_config(httr::config(ssl_verifypeer = F))
+# install_github('End-to-end-provenance/RDataTracker')
+install_github('augustofadel/magga')
+httr::set_config(httr::config(ssl_verifypeer = T))
+dissim <- dist(dat)
+input <- init_tsp(dat, dissim)
+input
+httr::set_config(httr::config(ssl_verifypeer = F))
+# install_github('End-to-end-provenance/RDataTracker')
+install_github('augustofadel/magga')
+httr::set_config(httr::config(ssl_verifypeer = T))
+pop_size <- 10
+dissim <- dist(dat)
+input <- init_tsp(dat, dissim)
+n_obj <- nrow(dat)
+cl <- makeCluster(ncores)
+clusterExport(cl, list('init_population', 'input', 'n_obj', 'pop_size', 'aggr_levels'))
+pop <- lapply(
+as.list(aggr_levels),
+function(x) init_population(
+k = x,
+n_obj = n_obj,
+p = pop_size,
+# input = init_tsp(dat, dissim),
+input = input,
+cl = cl
+)
+)
+pop
+length(pop)
+dim(pop[[1]])
+pop_size <- 1000
+pop_size <- 10
+# kmeans
+script <- 'init_pop2'
+p <- profvis({
+source(file.path(main_path, 'script', paste0(script, '.R')))
+})
+p
+p <- profvis({
+source(file.path(main_path, 'script', paste0(script, '.R')))
+})
+stopCluster(cl)
+p
+pop_size <- 1000
+p <- profvis({
+source(file.path(main_path, 'script', paste0(script, '.R')))
+})
+htmlwidgets::saveWidget(p, file.path(main_path, 'results', paste0(script, '.html')))
+p
+pop[[1]] %>% dim
+p <- profvis({
+source(file.path(main_path, 'script', paste0(script, '.R')))
+})
+htmlwidgets::saveWidget(p, file.path(main_path, 'results', paste0(script, '.html')))
+#browseURL('init_pop1.html')
+p
+p <- profvis({
+ddg.run(
+r.script.path = file.path(main_path, 'script', paste0(script, '.R'))
+)
+})
+##------ Thu May 17 10:53:42 2018 ------##
+htmlwidgets::saveWidget(p, file.path(main_path, 'results', paste0(script, '_ddg.html')))
+p
+ncores
+# kmeans
+script <- 'init_pop3'
+p <- profvis({
+source(file.path(main_path, 'script', paste0(script, '.R')))
+})
+init_mst(dat, as.matrix(dissim))
+init_mst(dat)
+library(devtools)
+httr::set_config(httr::config(ssl_verifypeer = F))
+# install_github('End-to-end-provenance/RDataTracker')
+install_github('augustofadel/magga')
+httr::set_config(httr::config(ssl_verifypeer = T))
+dissim <- dist(dat)
+init_mst(dat, as.matrix(dissim))
+library(devtools)
+httr::set_config(httr::config(ssl_verifypeer = F))
+# install_github('End-to-end-provenance/RDataTracker')
+install_github('augustofadel/magga')
+httr::set_config(httr::config(ssl_verifypeer = T))
+init_mst(dat, as.matrix(dissim))
+library(devtools)
+httr::set_config(httr::config(ssl_verifypeer = F))
+# install_github('End-to-end-provenance/RDataTracker')
+install_github('augustofadel/magga')
+httr::set_config(httr::config(ssl_verifypeer = T))
+init_mst(dat, as.matrix(dissim))
+init_mst(dat, as.matrix(dissim), k = 3)
+dissim <- dist(dat) %>% as.matrix
+# input <- init_mst(dat, as.matrix(dissim))
+n_obj <- nrow(dat)
+pop_size <- 10
+cl <- makeCluster(ncores)
+clusterExport(cl, list('init_population', 'dat', 'n_obj', 'pop_size', 'aggr_levels'))
+pop <- lapply(
+as.list(aggr_levels),
+function(x) init_population(
+k = x,
+n_obj = n_obj,
+p = pop_size,
+input = init_mst(dat, dissim, k = x),
+# input = input,
+cl = cl
+)
+)
+stopCluster(cl)
+??diameter
+library(igraph)
+stopCluster(cl)
+stopCluster(cl)
+cl <- makeCluster(ncores)
+clusterExport(cl, list('init_population', 'dat', 'n_obj', 'pop_size', 'aggr_levels'))
+pop <- lapply(
+as.list(aggr_levels),
+function(x) init_population(
+k = x,
+n_obj = n_obj,
+p = pop_size,
+input = init_mst(dat, dissim, k = x),
+# input = input,
+cl = cl
+)
+)
+stopCluster(cl)
+library(devtools)
+httr::set_config(httr::config(ssl_verifypeer = F))
+# install_github('End-to-end-provenance/RDataTracker')
+install_github('augustofadel/magga')
+httr::set_config(httr::config(ssl_verifypeer = T))
+cl <- makeCluster(ncores)
+clusterExport(cl, list('init_population', 'diameter', 'dat', 'n_obj', 'pop_size', 'aggr_levels'))
+pop <- lapply(
+as.list(aggr_levels),
+function(x) init_population(
+k = x,
+n_obj = n_obj,
+p = pop_size,
+input = init_mst(dat, dissim, k = x),
+# input = input,
+cl = cl
+)
+)
+stopCluster(cl)
+script <- 'init_pop3'
+p <- profvis({
+source(file.path(main_path, 'script', paste0(script, '.R')))
+})
+htmlwidgets::saveWidget(p, file.path(main_path, 'results', paste0(script, '.html')))
+p
+p <- profvis({
+ddg.run(
+r.script.path = file.path(main_path, 'script', paste0(script, '.R'))
+)
+})
+##------ Thu May 17 11:28:57 2018 ------##
+htmlwidgets::saveWidget(p, file.path(main_path, 'results', paste0(script, '_ddg.html')))
+p
+ddg.display()
+ddg.run(
+r.script.path = file.path(main_path, 'script', paste0(script, '.R'))
+)
+##------ Thu May 17 11:38:25 2018 ------##
+ddg.display()
+ddg.display()
+ddg.display()
+ddg.display()
+dim(dat)
+class(pop)
+lapply(lapply(pop, function(x) {x[1:100]}), dim)
+lapply(lapply(pop, function(x) {x[,1:100]}), dim)
+lapply(lapply(pop, function(x) {x[[,1:100]]}), dim)
+lapply(pop, function(x) {x[[,1:100]]})
+lapply(pop, function(x) {x[,1:100]})
+lapply(pop, function(x) {x[1:100]})
+pop[[1]] %>% dim
+lapply(lapply(pop, function(x) {x[[,1:5]]}), dim)
+lapply(lapply(pop, function(x) {x[,1:5]}), dim)
+pk <- 100
+pop1 <- lapply(
+readRDS(file.path(main_path, 'results', paste0(data_file, '_pop_kmeans.rds'))),
+function(x) {x[, sort(sample(pk, 1:pop_size, replace = F))]}
+)
+lapply(pop1, dim)
+sample(pk, 1:pop_size, replace = F)
+pk
+sample(pk, 1:pop_size, replace = F)
+?sample
+pop1 <- lapply(
+readRDS(file.path(main_path, 'results', paste0(data_file, '_pop_kmeans.rds'))),
+function(x) {x[, sort(sample(1:pop_size, pk, replace = F))]}
+)
+pk
+for (script in c('init_pop1', 'init_pop2', 'init_pop3')) {
+p <- profvis({
+source(file.path(main_path, 'script', paste0(script, '.R')))
+})
+htmlwidgets::saveWidget(p, file.path(main_path, 'results', paste0(script, '.html')))
+#browseURL('init_pop1.html')
+p <- profvis({
+ddg.run(
+r.script.path = file.path(main_path, 'script', paste0(script, '.R'))
+)
+})
+htmlwidgets::saveWidget(p, file.path(main_path, 'results', paste0(script, '_ddg.html')))
+}
+##------ Thu May 17 14:10:28 2018 ------##

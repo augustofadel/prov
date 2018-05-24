@@ -1,0 +1,5 @@
+"generations","init","fobj","pop_size","elite","mutant","survival","aggr","dataset","replica","t","t_prov","IL1","IL2","DLD","err"
+50,"kmeans","IL1",50,0.1,0.1,0.7,3,"DS1-200DATA",1,NA,NA,NA,NA,NA,FALSE
+100,"kmeans","IL1",50,0.1,0.1,0.7,3,"DS1-200DATA",1,NA,NA,NA,NA,NA,FALSE
+200,"kmeans","IL1",50,0.1,0.1,0.7,3,"DS1-200DATA",1,NA,NA,NA,NA,NA,FALSE
+50,"tsp","IL1",50,0.1,0.1,0.7,3,"DS1-200DATA",1,NA,NA,NA,NA,NA,FALSE

@@ -1,0 +1,25 @@
+Architecture="x86_64"
+OperatingSystem="windows"
+Language="R"
+LanguageVersion="R version 3.4.0 (2017-04-21)"
+RDataTrackerVersion="2.26.0"
+Script="D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script/teste0.R"
+SourcedScripts=""
+ProcessFileTimestamp="2018-05-18T12.39.31-03"
+WorkingDirectory="D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script"
+DDGDirectory="D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script/teste0_ddg"
+DateTime="2018-05-18T12.40.28-03"
+InstalledPackages=""
+4
+Start p1 "1-teste0.R" Value="teste0.R" Time="0.46" Script="NA" Pos="NA";
+Operation p2 "2-data(\"iris\")" Value="data(\"iris\")" Time="0.46" Script="0" Pos="1,1,1,12";
+CF p1 p2
+Operation p3 "3-sol <- kmeans(iris[, -5], 3)" Value="sol <- kmeans(iris[, -5], 3)" Time="0.46" Script="0" Pos="2,1,2,27";
+CF p2 p3
+Snapshot d1 "1-iris [ENV]" Value="data/1-iris.csv" Time="2018-05-18T12.40.28-03";
+DF d1 p3
+Snapshot d2 "2-sol" Value="data/2-sol.txt" Time="2018-05-18T12.40.28-03";
+DF p3 d2
+Finish p4 "4-teste0.R" Value="teste0.R" Time="0.46" Script="NA" Pos="NA";
+CF p3 p4
+

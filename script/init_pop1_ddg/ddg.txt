@@ -1,0 +1,63 @@
+Architecture="x86_64"
+OperatingSystem="windows"
+Language="R"
+LanguageVersion="R version 3.4.0 (2017-04-21)"
+RDataTrackerVersion="2.26.0"
+Script="D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script/init_pop1.R"
+SourcedScripts=""
+ProcessFileTimestamp="2018-05-17T14.05.25-03"
+WorkingDirectory="D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script"
+DDGDirectory="D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script/init_pop1_ddg"
+DateTime="2018-05-17T14.10.28-03"
+InstalledPackages=""
+10
+Start p1 "1-init_pop1.R" Value="init_pop1.R" Time="163.87" Script="NA" Pos="NA";
+Operation p2 "2-cl <- makeCluster(ncores)" Value="cl <- makeCluster(ncores)" Time="163.9" Script="0" Pos="11,1,11,25";
+CF p1 p2
+Data d1 "1-ncores [ENV]" Value="8";
+DF d1 p2
+Snapshot d2 "2-cl" Value="data/2-cl-PARTIAL.txt" Time="2018-05-17T14.10.30-03";
+DF p2 d2
+Operation p3 "3-clusterExport(cl, list(\"kmeans_ma\", \"dat\", \"aggr_levels\"))" Value="clusterExport(cl, list(\"kmeans_ma\", \"dat\", \"aggr_levels\"))" Time="163.92" Script="0" Pos="12,1,12,58";
+CF p2 p3
+DF d2 p3
+Start p4 "4-for (data_file in calib_files) {    dat <- readRDS(file.path" Value="for (data_file in calib_files) {    dat <- readRDS(file.path" Time="163.93" Script="0" Pos="14,1,22,1";
+CF p3 p4
+Data d3 "3-calib_files [ENV]" Value="\"DS1-200DATA.rds\"";
+DF d3 p4
+Data d4 "4-data_path [ENV]" Value="\"~/!filesync/instancias/sdc\"";
+DF d4 p4
+Snapshot d5 "5-dat [ENV]" Value="data/5-dat.csv" Time="2018-05-17T14.10.31-03";
+DF d5 p4
+Snapshot d6 "6-aggr_levels [ENV]" Value="data/6-aggr_levels.csv" Time="2018-05-17T14.10.31-03";
+DF d6 p4
+Snapshot d7 "7-pop [ENV]" Value="data/7-pop-PARTIAL.txt" Time="2018-05-17T14.10.31-03";
+DF d7 p4
+Data d8 "8-main_path [ENV]" Value="\"~/!filesync/mestrado/18.1_e-science/trabalho\"";
+DF d8 p4
+Start p5 "5-for loop" Value="for loop" Time="163.98" Script="NA" Pos="NA";
+CF p4 p5
+Operation p6 "6-data_file <- DS1-200DATA.rds" Value="data_file <- DS1-200DATA.rds" Time="163.98" Script="NA" Pos="NA";
+CF p5 p6
+Data d9 "9-data_file" Value="\"DS1-200DATA.rds\"";
+DF p6 d9
+Operation p7 "7-dat <- readRDS(file.path(data_path, data_file))" Value="dat <- readRDS(file.path(data_path, data_file))" Time="163.98" Script="0" Pos="16,3,16,49";
+CF p6 p7
+DF d4 p7
+DF d9 p7
+Snapshot d10 "10-dat" Value="data/10-dat.csv" Time="2018-05-17T14.10.31-03";
+DF p7 d10
+Operation p8 "8-dissim <- dist(dat)" Value="dissim <- dist(dat)" Time="164.01" Script="0" Pos="17,3,17,21";
+CF p7 p8
+DF d10 p8
+Snapshot d11 "11-dissim" Value="data/11-dissim-PARTIAL.txt" Time="2018-05-17T14.10.31-03";
+DF p8 d11
+Operation p9 "9-pop <- lapply(as.list(aggr_levels), function(x) {    parSapp" Value="pop <- lapply(as.list(aggr_levels), function(x) {    parSapp" Time="164.1" Script="0" Pos="18,3,20,4";
+CF p8 p9
+Exception d12 "12-error.msg" Value="\"Error in checkForRemoteErrors(val): 8 nodes produced errors; first error: unused argument (dissim = dissim) \"";
+DF p9 d12
+Operation p10 "10-for (data_file in calib_files) {    dat <- readRDS(file.path" Value="for (data_file in calib_files) {    dat <- readRDS(file.path" Time="164.1" Script="0" Pos="14,1,22,1";
+CF p9 p10
+Exception d13 "13-error.msg" Value="\"Error in checkForRemoteErrors(val): 8 nodes produced errors; first error: unused argument (dissim = dissim) \"";
+DF p10 d13
+

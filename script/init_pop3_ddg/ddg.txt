@@ -1,0 +1,73 @@
+Architecture="x86_64"
+OperatingSystem="windows"
+Language="R"
+LanguageVersion="R version 3.4.0 (2017-04-21)"
+RDataTrackerVersion="2.26.0"
+Script="D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script/init_pop3.R"
+SourcedScripts=""
+ProcessFileTimestamp="2018-05-17T13.58.33-03"
+WorkingDirectory="D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script"
+DDGDirectory="D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script/init_pop3_ddg"
+DateTime="2018-05-17T14.10.42-03"
+InstalledPackages=""
+12
+Start p1 "1-init_pop3.R" Value="init_pop3.R" Time="165.18" Script="NA" Pos="NA";
+Operation p2 "2-dissim <- dist(dat) %>% as.matrix" Value="dissim <- dist(dat) %>% as.matrix" Time="165.2" Script="0" Pos="3,1,3,33";
+CF p1 p2
+Snapshot d1 "1-dat [ENV]" Value="data/1-dat.csv" Time="2018-05-17T14.10.42-03";
+DF d1 p2
+Snapshot d2 "2-dissim" Value="data/2-dissim-PARTIAL.csv" Time="2018-05-17T14.10.42-03";
+DF p2 d2
+Operation p3 "3-n_obj <- nrow(dat)" Value="n_obj <- nrow(dat)" Time="165.21" Script="0" Pos="4,1,4,18";
+CF p2 p3
+DF d1 p3
+Data d3 "3-n_obj" Value="200";
+DF p3 d3
+Operation p4 "4-cl <- makeCluster(ncores)" Value="cl <- makeCluster(ncores)" Time="165.24" Script="0" Pos="6,1,6,25";
+CF p3 p4
+Data d4 "4-ncores [ENV]" Value="8";
+DF d4 p4
+Snapshot d5 "5-cl" Value="data/5-cl-PARTIAL.txt" Time="2018-05-17T14.10.43-03";
+DF p4 d5
+Operation p5 "5-clusterExport(cl, list(\"init_population\", \"diameter\", \"dat\"," Value="clusterExport(cl, list(\"init_population\", \"diameter\", \"dat\"," Time="165.24" Script="0" Pos="7,1,7,97";
+CF p4 p5
+DF d5 p5
+Start p6 "6-for (data_file in calib_files) {    dat <- readRDS(file.path" Value="for (data_file in calib_files) {    dat <- readRDS(file.path" Time="165.25" Script="0" Pos="9,1,24,1";
+CF p5 p6
+Data d6 "6-calib_files [ENV]" Value="\"DS1-200DATA.rds\"";
+DF d6 p6
+Data d7 "7-data_path [ENV]" Value="\"~/!filesync/instancias/sdc\"";
+DF d7 p6
+DF d1 p6
+Snapshot d8 "8-aggr_levels [ENV]" Value="data/8-aggr_levels.csv" Time="2018-05-17T14.10.44-03";
+DF d8 p6
+Snapshot d9 "9-pop [ENV]" Value="data/9-pop-PARTIAL.txt" Time="2018-05-17T14.10.44-03";
+DF d9 p6
+Data d10 "10-main_path [ENV]" Value="\"~/!filesync/mestrado/18.1_e-science/trabalho\"";
+DF d10 p6
+Start p7 "7-for loop" Value="for loop" Time="165.28" Script="NA" Pos="NA";
+CF p6 p7
+Operation p8 "8-data_file <- DS1-200DATA.rds" Value="data_file <- DS1-200DATA.rds" Time="165.28" Script="NA" Pos="NA";
+CF p7 p8
+Data d11 "11-data_file" Value="\"DS1-200DATA.rds\"";
+DF p8 d11
+Operation p9 "9-dat <- readRDS(file.path(data_path, data_file))" Value="dat <- readRDS(file.path(data_path, data_file))" Time="165.3" Script="0" Pos="11,3,11,49";
+CF p8 p9
+DF d7 p9
+DF d11 p9
+Snapshot d12 "12-dat" Value="data/12-dat.csv" Time="2018-05-17T14.10.44-03";
+DF p9 d12
+Operation p10 "10-dissim <- dist(dat)" Value="dissim <- dist(dat)" Time="165.32" Script="0" Pos="12,3,12,21";
+CF p9 p10
+DF d12 p10
+Snapshot d13 "13-dissim" Value="data/13-dissim-PARTIAL.txt" Time="2018-05-17T14.10.44-03";
+DF p10 d13
+Operation p11 "11-pop <- lapply(as.list(aggr_levels), function(x) init_populat" Value="pop <- lapply(as.list(aggr_levels), function(x) init_populat" Time="165.44" Script="0" Pos="13,3,22,3";
+CF p10 p11
+Exception d14 "14-error.msg" Value="\"Error in dissim[x[1], x[2]]: incorrect number of dimensions \"";
+DF p11 d14
+Operation p12 "12-for (data_file in calib_files) {    dat <- readRDS(file.path" Value="for (data_file in calib_files) {    dat <- readRDS(file.path" Time="165.44" Script="0" Pos="9,1,24,1";
+CF p11 p12
+Exception d15 "15-error.msg" Value="\"Error in dissim[x[1], x[2]]: incorrect number of dimensions \"";
+DF p12 d15
+

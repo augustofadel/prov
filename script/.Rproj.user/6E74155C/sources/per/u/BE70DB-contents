@@ -1,0 +1,9 @@
+magga_path <- '~/Desktop/filesync/repos/magga/R'
+source(file.path(magga_path, 'func_aloise.R'))
+source(file.path(magga_path, 'func_aux.R'))
+source(file.path(magga_path, 'func_brkga.R'))
+source(file.path(magga_path, 'func_init_mst.R'))
+source(file.path(magga_path, 'func_init_pop.R'))
+source(file.path(magga_path, 'func_init_tsp.R'))
+source(file.path(magga_path, 'func_microagg_brkga.R'))
+source(file.path(magga_path, 'func_sdc.R'))

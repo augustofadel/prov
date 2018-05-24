@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1526597977044.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3661090534",
+    "id" : "417A4C67",
+    "lastKnownWriteTime" : 1526599935,
+    "last_content_update" : 1526599935709,
+    "path" : "~/Desktop/filesync/repos/magga/R/func_microagg_brkga.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "202,88",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 3,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}

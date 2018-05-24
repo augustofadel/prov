@@ -1,0 +1,119 @@
+{
+
+"prefix" : {
+"prov" : "http://www.w3.org/ns/prov#",
+"rdt" : "http://rdatatracker.org/"
+},
+"activity":{
+
+"p1" : {
+"rdt:name" : "teste0.R",
+"rdt:type" : "Start",
+"rdt:elapsedTime" : "0.46",
+"rdt:scriptNum" : "NA",
+"rdt:startLine" : "NA",
+"rdt:startCol" : "NA",
+"rdt:endLine" : "NA",
+"rdt:endCol" : "NA"
+} ,
+
+"p2" : {
+"rdt:name" : "data(\"iris\")",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "0.46",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "1",
+"rdt:startCol" : "1",
+"rdt:endLine" : "1",
+"rdt:endCol" : "12"
+} ,
+
+"p3" : {
+"rdt:name" : "sol <- kmeans(iris[, -5], 3)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "0.46",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "2",
+"rdt:startCol" : "1",
+"rdt:endLine" : "2",
+"rdt:endCol" : "27"
+} ,
+
+"p4" : {
+"rdt:name" : "teste0.R",
+"rdt:type" : "Finish",
+"rdt:elapsedTime" : "0.46",
+"rdt:scriptNum" : "NA",
+"rdt:startLine" : "NA",
+"rdt:startCol" : "NA",
+"rdt:endLine" : "NA",
+"rdt:endCol" : "NA"
+} ,
+
+"environment" : {
+"rdt:name" : "environment",
+"rdt:architecture" : "x86_64",
+"rdt:operatingSystem" : "windows",
+"rdt:language" : "R",
+"rdt:rVersion" : "R version 3.4.0 (2017-04-21)",
+"rdt:script" : "D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script/teste0.R",
+"rdt:sourcedScripts" : ""
+,
+"rdt:scriptTimeStamp" : "2018-05-18T12.39.31-03",
+"rdt:workingDirectory" : "D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script",
+"rdt:ddgDirectory" : "D:/Users/augusto.fadel/Documents/!filesync/mestrado/18.1_e-science/trabalho/script/teste0_ddg",
+"rdt:ddgTimeStamp" : "2018-05-18T12.40.28-03",
+"rdt:rdatatrackerVersion" : "2.26.0",
+"rdt:installedPackages" : [
+	{"package" : "", "version" : ""}]
+}},
+"entity":{
+
+"d1" : {
+"rdt:name" : "iris [ENV]",
+"rdt:value" : "data/1-iris.csv",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+} ,
+
+"d2" : {
+"rdt:name" : "sol",
+"rdt:value" : "data/2-sol.txt",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}},
+"wasInformedBy":{
+
+"e1" : {
+"prov:informant" : "p1",
+"prov:informed" : "p2"
+} ,
+
+"e2" : {
+"prov:informant" : "p2",
+"prov:informed" : "p3"
+} ,
+
+"e5" : {
+"prov:informant" : "p3",
+"prov:informed" : "p4"
+}},
+"wasGeneratedBy":{
+
+"e4" : {
+"prov:entity" : "d2",
+"prov:activity" : "p3"
+}},
+"used":{
+
+"e3" : {
+"prov:activity" : "p3",
+"prov:entity" : "d1"
+}}
+}

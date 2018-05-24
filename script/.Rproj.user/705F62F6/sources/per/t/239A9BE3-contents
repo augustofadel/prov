@@ -1,0 +1,17 @@
+data_path <- '~/!filesync/instancias/sdc'
+
+# files <- list.files(data_path, '.rds')
+# calib_files <- c(
+#   'DS1-200DATA.rds',
+#   'DS2-Uniform400.rds',
+#   'DS3-censo_Rio de Janeiro.rds',
+#   'DS4-Tarragona.rds'
+# )
+
+calib_files <- 'DS1-200DATA.rds'
+
+aggr_levels <- c(3, 4, 5)
+
+pop_size <- 1000
+
+ncores <- 8
